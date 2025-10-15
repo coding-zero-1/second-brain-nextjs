@@ -17,7 +17,8 @@ model User {
   sessions      Session[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
- 
+  share        Share?
+  cards       Card[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -75,4 +76,30 @@ model Authenticator {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
  
   @@id([userId, credentialID])
+}
+
+model Share{
+  id     String   @id @default(cuid())
+  linkId String
+  userId String  @unique
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Card{
+  id        String      @id @default(cuid())
+  title     String
+  description String
+  text     String?
+  link      String?
+  type     ContentType
+  userId   String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime    @default(now())
+  @@index([userId])
+}
+
+enum ContentType {
+  YOUTUBE
+  TWITTER
+  TEXT
 }
