@@ -1,19 +1,21 @@
-import { signIn } from "@/auth";
+import { signOut } from "@/auth";
 
-export default function SignInButton() {
+function SignOutButton() {
   return (
     <form
       action={async () => {
         "use server";
-        await signIn("google", { redirectTo: "/dashboard" });
+        await signOut({ redirectTo: "/" });
       }}
     >
       <button
         type="submit"
         className="bg-[#7a45a9] px-6 py-1.5 rounded-xl cursor-pointer text-lg text-white border-2 border-white shadow-sm shadow-blue-800 hover:bg-[#87239b]"
       >
-        Get Started <span className="text-xl">&gt;&gt;</span>
+        Sign Out
       </button>
     </form>
   );
 }
+
+export default SignOutButton;
