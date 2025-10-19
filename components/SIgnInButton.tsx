@@ -10,7 +10,7 @@ export default function SignInButton() {
     >
       <button
         type="submit"
-        className="bg-[#7a45a9] px-6 py-1.5 rounded-xl cursor-pointer text-lg text-white border-2 border-white shadow-sm shadow-blue-800 hover:bg-[#87239b]"
+        className="bg-purple-600 px-6 py-1.5 rounded-xl cursor-pointer text-lg text-white border-2 border-white shadow-xs shadow-black hover:bg-purple-700"
       >
         Get Started <span className="text-xl">&gt;&gt;</span>
       </button>
