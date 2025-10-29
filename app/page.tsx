@@ -31,42 +31,24 @@ async function Home() {
     },
   ];
   return (
-    <main className="h-[91%] w-full flex justify-center items-center">
-      <section className="w-[90%] h-[85%] flex flex-1-row justify-between items-center rounded-3xl p-10">
-        <div className="h-full w-[60%] flex flex-col items-center justify-center text-[#0B032D]">
-          <div className="w-full text-center">
-            <h1 className="text-5xl font-medium underline underline-offset-10">
-              Your <span className="text-purple-600">own</span> Second brain 🧠
-            </h1>
-          </div>
-          <div className="w-full">
-            <p className="text-2xl mt-5 text-center">
-              Cognito is an AI-powered knowledge management system that helps
-              you capture, organize, and retrieve information effortlessly.
-            </p>
-            <div className="w-full mt-5 flex flex-col items-center justify-center gap-4">
-              <p className="text-2xl font-medium">Store your:</p>
-              <div className="flex gap-2 items-center w-full justify-center">
-                {features.map((feature) => (
-                  <LandingPageCard
-                    key={feature.title}
-                    title={feature.title}
-                    description={feature.description}
-                    imageUrl={feature.imageUrl}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+    <main className="h-[92%] w-full flex flex-col justify-center items-center">
+      <section className="h-full w-[80%] flex flex-col items-center justify-between">
+        <div className="text-center mt-10 h-[20%]">
+          <h1 className="text-5xl font-normal text-[#0B032D] mb-4">
+            Your very own{" "}
+            <span className="font-medium italic text-[#2B20FF]">
+              Second Brain
+            </span>
+          </h1>
+          <h3 className="text-gray-700 text-lg">
+            Save your precious brain space for what’s important right now <br />
+            Store now, Refer Later
+          </h3>
         </div>
-        <div>
-          <Image
-            src="/hero-section-image.png"
-            alt="Cognito hero section image"
-            width={420}
-            height={400}
-            className="rounded-3xl"
-          />
+        <div className="h-[70%] w-full flex justify-center items-center">
+          <div className="w-[80%] bg-amber-300 h-full">
+            Hello
+          </div>
         </div>
       </section>
     </main>
